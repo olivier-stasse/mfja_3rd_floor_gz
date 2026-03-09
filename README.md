@@ -99,3 +99,9 @@ Check TIAGo odometry:
 ```
 ros2 topic echo /tiago1/odom
 ```
+
+## Known issue and temporary workaround
+
+In the current scene layout, the KUKA robot may start too close to the left plexiglas cover (`carter_gauche`) and immediately collide with it at startup. This can block the robot motion before any command is sent.
+
+As a temporary workaround, the collision geometry was disabled only for `carter_gauche`, while keeping the part visible in the scene. This preserves the visual layout of the workcell and allows the robot to move normally until a proper collision-safe placement or model refinement is implemented.
